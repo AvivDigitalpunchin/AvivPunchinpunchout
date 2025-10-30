@@ -25,7 +25,7 @@ function StudentAttendance() {
           return;
         }
 
-        const response = await axios.get("http://localhost:4001/student/details", {
+        const response = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/details", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -44,7 +44,7 @@ function StudentAttendance() {
     const fetchPunchDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:4001/student/punchindetails", {
+        const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/punchindetails", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -161,8 +161,8 @@ const monthStats = getMonthAttendance();
     try {
       const token = localStorage.getItem("token");
       const url = isPunchedIn
-        ? "http://localhost:4001/student/punchout"
-        : "http://localhost:4001/student/punchin";
+        ? "https://avivdigitalpunchinpunchoutbackend.onrender.com/student/punchout"
+        : "https://avivdigitalpunchinpunchoutbackend.onrender.com/student/punchin";
 
       const res = await axios.post(
         url,

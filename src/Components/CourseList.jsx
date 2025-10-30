@@ -9,8 +9,8 @@ function CourseList() {
   const [showAddBatchModal, setShowAddBatchModal] = useState(false);
   const [newBatchName, setNewBatchName] = useState('');
 
-  const API_URL = 'http://localhost:4001/admin/courses'; // Change if different
-  const ADD_COURSE= 'http://localhost:4001/admin/addcourse'
+  const API_URL = 'https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/courses'; // Change if different
+  const ADD_COURSE= 'https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/addcourse'
 
   // Fetch courses from backend
   const fetchCourses = async () => {
@@ -54,7 +54,7 @@ function CourseList() {
   const toggleActive = async (id) => {
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.post(`http://localhost:4001/admin/courses/toggle`, {
+    const response = await axios.post(`https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/courses/toggle`, {
       id, // sending the ID in body
     },{headers: {
           Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ function CourseList() {
 
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.post('http://localhost:4001/admin/courses/add-batch', {
+    const response = await axios.post('https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/courses/add-batch', {
       courseId: selectedCourse._id,
       batchName: newBatchName.trim(),
     },{headers: {

@@ -47,14 +47,14 @@ useEffect(() => {
     try {
       setLoading(true); // show loader
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:4001/mentor/mentors",{
+      const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/mentors",{
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       setMentors(res.data.data);
 
-      const response = await axios.get("http://localhost:4001/admin/courses",{
+      const response = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/courses",{
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -95,7 +95,7 @@ const toggleActive = async (_id) => {
   try {
     setLoading(true);
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:4001/mentor/toggle", { id: _id },{
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/toggle", { id: _id },{
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -131,7 +131,7 @@ const handleEditMentor = async () => {
   try {
     setLoading(true);
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:4001/mentor/update", {
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/update", {
       _id, name, email, phone, course,
     },{
         headers: {
@@ -173,7 +173,7 @@ const handleAddMentor = async () => {
   try {
     setLoading(true);
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:4001/mentor/addmentor", {
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/addmentor", {
       ...newMentor,
       active: true,
     },
@@ -214,7 +214,7 @@ const handleVerifyEmail = async () => {
   try {
     setLoading(true);
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:4001/admin/mentor/send-verification", {
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/mentor/send-verification", {
       email: newMentor.email,
     },{
         headers: {
@@ -241,7 +241,7 @@ const handleSubmitOtp = async () => {
   try {
     setLoading(true);
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:4001/admin/mentor/verify-otp", {
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/mentor/verify-otp", {
       email: newMentor.email,
       otp,
     },{

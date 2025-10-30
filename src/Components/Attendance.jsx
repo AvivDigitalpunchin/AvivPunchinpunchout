@@ -12,7 +12,7 @@ function Attendance() {
     const fetchStudents = async () => {
       try {
             const token = localStorage.getItem("token");
-        const res = await axios.get('http://localhost:4001/student/all',{headers: {
+        const res = await axios.get('https://avivdigitalpunchinpunchoutbackend.onrender.com/student/all',{headers: {
           Authorization: `Bearer ${token}`,
         },});
         setStudents(res.data.data);

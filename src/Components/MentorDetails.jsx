@@ -16,7 +16,7 @@ function MentorDetails() {
           return;
         }
 
-        const res = await axios.get("http://localhost:4001/mentor/datails", {
+        const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/datails", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

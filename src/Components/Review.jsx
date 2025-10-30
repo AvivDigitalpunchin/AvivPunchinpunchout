@@ -35,7 +35,7 @@ function Review() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/student/all");
+        const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/all");
         setStudents(res.data.data);
       } catch (error) {
         console.error("Error fetching students:", error);

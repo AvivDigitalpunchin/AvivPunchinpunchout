@@ -17,7 +17,7 @@ function StudentDetails() {
           return;
         }
 
-        const response = await axios.get("http://localhost:4001/student/details", {
+        const response = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/details", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

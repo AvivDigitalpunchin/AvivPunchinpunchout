@@ -32,7 +32,7 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:4001/admin/dashboard/counts", {
+      const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/dashboard/counts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

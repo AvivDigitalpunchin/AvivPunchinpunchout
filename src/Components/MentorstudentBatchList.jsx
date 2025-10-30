@@ -13,7 +13,7 @@ function MentorstudentBatchList() {
     const fetchBatches = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:4001/mentor/batchlist", {
+        const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/batchlist", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -39,7 +39,7 @@ function MentorstudentBatchList() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:4001/mentor/batch/students",
+        "https://avivdigitalpunchinpunchoutbackend.onrender.com/mentor/batch/students",
         { batchName },
         {
           headers: {

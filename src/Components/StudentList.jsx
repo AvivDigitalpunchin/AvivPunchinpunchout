@@ -31,7 +31,7 @@ useEffect(() => {
 const fetchCourses = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await axios.get("http://localhost:4001/admin/courses",
+    const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/admin/courses",
        {headers: {
           Authorization: `Bearer ${token}`,
         },}
@@ -46,7 +46,7 @@ const fetchCourses = async () => {
   const fetchStudents = async () => {
     try {
          const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:4001/student/all",
+      const res = await axios.get("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/all",
         {headers: {
           Authorization: `Bearer ${token}`,
         },}
@@ -60,7 +60,7 @@ const fetchCourses = async () => {
   const toggleActive = async (id) => {
     try {
          const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:4001/student/toggle", {
+      const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/toggle", {
         id,
       },{headers: {
           Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ const fetchCourses = async () => {
 
     try {
          const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:4001/student/add", {
+      const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/add", {
         name,
         email,
         phone,
@@ -111,7 +111,7 @@ const fetchCourses = async () => {
 
     try {
          const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:4001/student/edit", {
+      const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/edit", {
         _id,
         name,
         email,
