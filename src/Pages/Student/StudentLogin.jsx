@@ -12,7 +12,7 @@ function StudentLogin() {
   e.preventDefault();
 
   try {
-    const res = await axios.post("http://localhost:4001/student/studentlogin", {
+    const res = await axios.post("https://avivdigitalpunchinpunchoutbackend.onrender.com/student/studentlogin", {
       email,
       password,
     });
